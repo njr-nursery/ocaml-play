@@ -1,12 +1,12 @@
 type numeral = Zero | Succ of numeral
 
 let rec add a b = match (a, b) with
-    |  (x, Zero) -> a   
-    |  (Zero, y) -> a   
-    |  (x, Succ y) -> add (Succ x) y
+    | (x, Zero)   -> a
+    | (Zero, y)   -> a
+    | (x, Succ y) -> add (Succ x) y
 
 let rec numeral2Int n = match n with
-    | Zero -> 0
+    | Zero   -> 0
     | Succ n -> 1 + numeral2Int n
 
 let rec int2numeral i = match i with
